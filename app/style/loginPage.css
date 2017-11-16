@@ -1,0 +1,101 @@
+body {
+	background: white;
+}
+
+.textBoxSize {
+	width: 600;
+}
+
+.padding {
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
+.align {
+  text-align: left;
+}
+
+.color {
+  background-color:#0b9fef;
+}
+
+.textareaCfg {
+	width: 650px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 2px skyblue;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+	padding:0px;
+  font-size: 16px;
+  resize: none;
+}
+
+.postDiv {
+	width: 300px;
+  height: 100px;
+  border: 1px white;
+	padding:10px;
+}
+
+.logo{
+	color: white;
+	margin: 0;
+	font-size: 40px;
+    font-weight: lighter;
+	padding: 4px 0;
+	padding-bottom: 15px;
+
+}
+.logoUserProfile{
+	color: white;
+	font-size: 20px;
+    font-weight: bolder;
+}
+.login-bottom-text{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	color: white;
+	line-height: 19px;
+}
+
+header {
+	background: #0b9fef;
+	padding-top: 20px;
+}
+header .form-group{
+	margin-bottom: 0px;
+}
+header .btn-header-login{
+	margin-bottom: 15px;
+}
+.multibox{
+	padding-left: 0px;
+	padding-bottom: 10px;
+}
+
+.backgroundColor {
+    background: white;
+}
+
+.footer-options ul{
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+.footer-options ul li{
+	float:left;
+	list-style: none;
+	padding: 5px;
+	font-size: 12px;
+}
+.footer-options ul li a{
+	text-decoration: none;
+	color: #000;
+}
+.copyrights{
+	margin-top: 25px;
+}

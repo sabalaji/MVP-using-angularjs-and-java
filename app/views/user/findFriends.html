@@ -1,0 +1,25 @@
+<div>
+  <div class = "row">
+    <button class="btn btn-primary btn-block list-group-item active"
+            style = "width:790">Users in HB
+      <input type = "text"
+             ng-model = "userName"
+             style="color:blue">
+      </input>
+    </button>
+    <div class = "row"
+         ng-repeat = "user in allUser | filter:userName">
+      <div class="col-md-9">
+        <ul class="list-group">
+          <div>
+              <li class="list-group-item">{{user.email}}
+                <button style = "margin-left:600px"
+                        ng-click = "friendRequest(user.email)">request
+                </button>
+              </li>
+          </div>
+        </ui>
+      </div>
+    </div>
+  </div>
+</div>

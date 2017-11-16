@@ -1,0 +1,50 @@
+<div>
+  <div class = "container">
+    <div>
+      <label><b>Status</b></label>
+    </div>
+    <div>
+      <textarea class = "textareaCfg"
+                ng-model = "newPost"
+                required>
+      </textarea>
+    </div>
+    <button ng-click = "addPost(newPost)"
+            class = "btn btn-primary a-btn-slide-text color"
+            style = "margin:5px">
+      <span class = "glyphicon glyphicon-plus"></span>Post
+    </button>
+  </div>
+  <div ng-repeat = "post in uPost">
+    <div class = "row">
+      <h4 style = "display:inline">{{post.loginDetail.email}}</h4>
+      <div>
+        <textarea class = "textareaCfg"
+                  ng-model = "post.userPost">
+        </textarea>
+      </div>
+      <button class = "btn btn-info btn-lg"
+              style = "background-color:#337ab7;height:35px;margin:5px"
+              ng-click = "addLike(post.postId)">
+        <span class = "glyphicon glyphicon-thumbs-up"></span>Like
+      </button>
+      <button class = "btn btn-primary a-btn-slide-text"
+              style = "margin:5px"
+              ng-click = "updatePost(post.userPost, post.postId)">
+        <span class = "glyphicon glyphicon-eye-open" aria-hidden = "true"></span>Save
+      </button>
+      <button class = "btn btn-primary a-btn-slide-text"
+              style = "margin:5px"
+              ng-click = "deletePost(post)">
+        <span class = "glyphicon glyphicon-remove"
+              aria-hidden = "true"></span>Delete
+      </button>
+      <button class = "btn btn-primary a-btn-slide-text">
+        <a ng-click = "getAllLikeByPostId(post.postId)"
+           style = "color:white">Number Of likes:)<b>{{likes}}</b>
+        </a>
+      </button>
+      <hr style = "width:200px">
+    </div>
+  </div>
+</div>

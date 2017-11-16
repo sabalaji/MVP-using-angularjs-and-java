@@ -1,0 +1,194 @@
+/******
+create database 
+
+/*table creation*/
+
+create table loginDetail (
+	id int not null primary key identity(1, 1),
+	email nvarchar(50) not null unique,
+	password nvarchar(50) not null,
+	isActive int not null
+);
+
+create table userDetail (
+	userDetailId int not null primary key identity(1, 1),
+	id int not null foreign key references loginDetail(id) unique,
+	profilePicture varchar(30),
+	name varchar(20),
+	dateOfBirth varchar(20),
+	gender varchar(10),
+	phoneNumber varchar(20),
+	schoolName varchar(30),
+	collegeName varchar(30),
+	workingStatus varchar(30),
+	relationshipStatus varchar(20),
+	country varchar(25),
+	homeTown varchar(25),
+	languageKnown varchar(50)
+);
+
+create table post (
+	postId int not null primary key identity(1, 1),
+	id int not null foreign key references loginDetail(id) on delete cascade,
+	userPost nvarchar(MAX)
+);
+
+create table postlike (
+	postLikeId int not null primary key identity(1, 1),
+	postId int not null,
+	userEmail varchar(30) not null 
+);
+
+create table friendRequest (
+	friendRequestId int not null primary key identity(1, 1),
+	idSender int not null foreign key references loginDetail(id),
+	idReceiver int not null,
+	isActive tinyint
+);
+
+
+
+/*insert operation*/
+insert into loginDetail values ('balaji@happybook.com', 'balaji',1)
+insert into loginDetail values ('sabarish@happybook.com', 'sabarish',1);
+insert into loginDetail values ('lakshmi.jey', 'lakshmi',1);
+
+insert into userDetail (profilePicture, name, dateOfBirth, gender, phoneNumber, schoolName, collegeName, workingStatus, relationshipStatus, country, homeTown, languageKnown,id)
+				values ('balaji.jpg', 'balaji', '2017-10-20', 'male', '8148418407', 'MMW school', 'vickram college', 'OFS', 'Single forever','india', 'madurai', 'tamil english sourastra',1);
+insert into userDetail (profilePicture, name, dateOfBirth, gender, phoneNumber, schoolName, collegeName, workingStatus, relationshipStatus, country, homeTown, languageKnown,id)
+				values ('sabarish.jpg', 'sabarish', '2017-10-20', 'male', '8148418407', 'MMW school', 'KLN college', 'OFS', 'Single forever','india', 'madurai', 'tamil english sourastra',2);
+				
+insert into friendRequest (idSender, idReceiver, accepted, declined) values (1, 2, 1, 0);
+
+insert into friendList (id, idFriend) values (1, 2);
+
+insert into post (id, userPost) values (1, 'Have a nice day');
+insert into post (id, userPost) values (1, 'India won the match #chak de India');
+insert into post (id, userPost) values (1, 'Pardeep Narwal u r great #kabadi kabadi #chak de India');
+insert into post (id, userPost) values (2, 'I am going to tell one joke,
+											I am going to say,....
+											I am saying,.....
+											one joke #hahahaaa #imposible');
+insert into post (id, userPost) values (2, 'I am going to post status omg i already posted#heheeeee');
+
+insert into post (id, userPost) values (2, 'good morning');
+
+insert into postShare (postId) values (1);
+
+insert into postLike (postId) values (1);
+
+
+/**********************************\
+
+/***** select ****/
+
+/*****innner join two table*/
+select profilePicture from userDetail 
+inner join 
+	userLoginDetail 
+on 
+	userDetail.userDetailid = userLoginDetail.userId 
+	where 
+		email = 'aaa';
+*******/
+		
+/******		
+select profilePicture from userDetail 
+inner join 
+	userLoginDetail 
+	on 
+		userDetail.userId = userLoginDetail.userId 
+		where 
+			email = 'bbb';
+******/
+
+select * from (( userLoginDetail
+inner join 
+	userDetail
+	on 
+		userLoginDetail.userId = userDetail.userId)
+inner join 
+	userPost
+	on	
+		userLoginDetail.userId = userPost.userId);
+
+
+select * from (( userLoginDetail
+inner join 
+	userDetail
+	on 
+		userLoginDetail.userId = userDetail.userId)
+inner join 
+	userPost
+	on	
+		userLoginDetail.userId = userPost.userId)
+	where 
+		userpost.userPostId = 1;		
+		
+/*******
+select profilePicture from userDetail 
+inner join 
+	userLoginDetail 
+	on 
+		userDetail.userId = userLoginDetail.userId 
+		where 
+			userDetail.userId = 3;
+*******/
+
+/*******
+select * from userDetail 
+inner join 
+	userLoginDetail 
+	on 
+		userDetail.userId = userLoginDetail.userId 
+		where 
+			email = 'bbb';
+*******/		
+
+select * from userPost 
+inner join 
+	userLoginDetail 
+	on 
+		userPost.userId = userLoginDetail.userId
+		where 
+			userPost.userId = 1;
+			
+			
+select userPost from userPost 
+inner join 
+	userLoginDetail 
+	on 
+		userPost.userId = userLoginDetail.userId
+		where 
+			userPost.userId = 1;
+			
+select * from ((( loginDetail
+inner join 
+	detail
+	on 
+		loginDetail.id = detail.id)
+inner join 
+	post
+	on	
+		loginDetail.id = post.id)
+inner join 
+	postLike
+	on
+		post.id = postLike.postId);
+
+/* update */
+
+update userDetail set name='balaji', homeTown ='madurai' where userDetailId = 1;  
+
+
+/*delete */
+
+delete from userDetail where userId = 2 ; 
+
+
+
+
+
+
+
+

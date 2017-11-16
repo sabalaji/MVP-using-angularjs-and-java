@@ -1,0 +1,117 @@
+<div class = "backgroundColor">
+  <div>
+    <header class = "loginPage">
+      <div class = "container">
+        <div class = "row">
+    		  <div class = "col-sm-6">
+    			  <div class = "logo">
+              <span><img style = "width:150px"
+                         src = "image/logo.jpg"
+                         alt = "logo">
+              </span>
+            </div>
+    		  </div>
+    		  <div class = "col-sm-6 hidden-xs">
+    			  <div class = "row">
+              <form ng-required>
+        				<div class = "col-sm-5">
+        					<div class = "form-group">
+      					    <input type = "text"
+                           class="form-control"
+                           ng-model = "emailExisting"
+                           placeholder="Email Address" required>
+      					    <div class = "login-bottom-text checkbox hidden-sm">
+      					    </div>
+        					</div>
+        				</div>
+        				<div class="col-sm-5">
+      					  <div class="form-group">
+      					    <input type="password"
+                           class = "form-control"
+                           ng-model = "passwordExisting"
+                           placeholder = "Password" required>
+                    </input>
+      					  </div>
+        				</div>
+        				<div class = "col-sm-2">
+      					  <div class = "form-group">
+      					    <a ng-click = login()
+                       class="btn btn-default btn-header-login">login
+                    </a>
+      					  </div>
+        				</div>
+              </form>
+    			  </div>
+    		  </div>
+    	  </div>
+    	</div>
+    </header>
+  </div>
+  <div class = "backgroundColor">
+    <article class = "container">
+  		<div class = "row">
+  			<div class = "col-sm-8">
+  				<div class = "login-main">
+  				</div>
+  			</div>
+  			<div class = "col-sm-4">
+          <form ng-required>
+    				<div>
+      				<h3><i></i> Register now</h3>
+      			  	<hr>
+      				<div class = "form-group">
+      				  <label class = "control-label">Email Address</label>
+      				  <input type ="text"
+                       class="form-control"
+                       ng-model = "email"
+                       placeholder = "Email Address" required>
+      				</div>
+
+      				<div class="form-group">
+      				  <label class="control-label">Password</label>
+      				  <input type="password"
+                       class="form-control"
+                       ng-model = "password"
+                       placeholder="Password" required>
+      				</div>
+
+    				</div>
+
+    				<small>
+    					By clicking Sign Up, you agree to our Terms and that you have read our
+    					Data Use Policy, including our Cookie Use.
+    				</small>
+    				<div style="height:10px;"></div>
+    				<div class="form-group">
+    				  <label class="control-label" for=""></label>
+    				  <button ng-click = addUser()
+                      class="btn btn-primary">submit
+              </button>
+    				</div>
+          </form>
+        </div>
+  		</div>
+    </article>
+  </div>
+</div>
+<div class = "backgroundColor">
+  <footer class="container">
+    <hr>
+    <div class="footer-options">
+      <ul >
+      	<li><a href="#">Mobile</li>
+      	<li><a href="#">Find Friends</li>
+      	<li><a href="#">Badges</li>
+      	<li><a href="#">People</li>
+      	<li><a href="#">Pages</li>
+      	<li><a href="#">Places</a></li>
+      	<li><a href="#">Games</a></li>
+      	<li><a href="#">Locations</a></li>
+      	<li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <div style="clear:both"></div>
+    <small class="copyrights"> © Copyrights reserved by balaji on 2017</small>
+  </footer>
+</div>
+<div class = "backgroundColor"></div>

@@ -1,0 +1,27 @@
+<div ng-if = "allPost">
+  <button class="btn btn-primary btn-block list-group-item active"
+          style = "width:790">NewsFeed
+  </button>
+  <div ng-repeat = "userPost in allPost | orderBy:[]:true" style = "width:100%">
+    <div class = "row">
+      <h4>Post Posted By :- {{userPost.loginDetail.email}}</h4>
+      <div>{{userPost.userPost}}</div>
+      <br/>
+      <div>
+        <button class = "btn btn-info btn-lg"
+                style = "background-color:#337ab7;height:35px;"
+                ng-click = "addLike(userPost.postId)"
+                name = "Like">
+          <span class = "glyphicon glyphicon-thumbs-up"></span>
+        </button>
+        <button class = "btn btn-info btn-lg"
+                style = "background-color:#337ab7;height:35px;"
+                ng-click = "addDisLike(userPost.postId)"
+                name = "Like">
+          <span class = "glyphicon glyphicon-thumbs-down"></span>
+        </button>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>

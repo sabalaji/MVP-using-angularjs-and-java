@@ -1,0 +1,8 @@
+<div class = "row">
+  <div ng-repeat = "user in userRequest">
+    <li class="list-group-item">{{user.idSender}}
+      <button ng-click = "acceptFriendRequest(user.idSender)">accept</button>
+      <button>decline</button>
+    </li>
+  </div>
+</div>
